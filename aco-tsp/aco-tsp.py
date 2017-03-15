@@ -23,6 +23,8 @@ plt.xlabel('x')
 plt.show()
 
 tcoords = np.array(solution.tour)
+first_visited_node = coords[solution.start]
+plt.plot(first_visited_node[0], first_visited_node[1], 'go')
 plt.plot(coords[:,0], coords[:,1], 'r.')
 plt.plot(tcoords[:,0], tcoords[:,1], 'b')
 plt.xticks(np.arange(0, 11, 1.0))
