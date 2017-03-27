@@ -17,34 +17,40 @@ def find_shortest_path(coordinates, function):
   acoSolver = ants.Solver()
   return acoSolver.solve(world)
 
-def draw_nodes(nodes):
-  plt.style.use('ggplot')
+def draw_nodes(nodes_plot, nodes):
   coordinates = np.array(nodes)
-  plt.plot(coordinates[:,0], coordinates[:,1], 'r.')
-  plt.xticks(np.arange(0, 11, 1.0))
-  plt.yticks(np.arange(1, 11, 1.0))
-  plt.ylabel('y')
-  plt.xlabel('x')
-  plt.show()
+  nodes_plot.plot(coordinates[:,0], coordinates[:,1], 'r.')
+  nodes_plot.set_title('Path nodes')
 
-def draw_shortest_path(nodes, solution):
+
+def draw_shortest_path(shortest_path_plot, nodes, solution):
   coordinates = np.array(nodes)
   shortest_path_coordinates = np.array(solution.tour)
   starting_point = coordinates[solution.start]
-  plt.plot(starting_point[0], starting_point[1], 'go')
-  plt.plot(coordinates[:,0], coordinates[:,1], 'r.')
-  plt.plot(shortest_path_coordinates[:,0], shortest_path_coordinates[:,1], 'b')
+  shortest_path_plot.plot(starting_point[0], starting_point[1], 'go')
+  shortest_path_plot.plot(coordinates[:,0], coordinates[:,1], 'r.')
+  shortest_path_plot.plot(shortest_path_coordinates[:,0], shortest_path_coordinates[:,1], 'b')
+  shortest_path_plot.set_title('Shortest path')
+
+
+if __name__ == "__main__":
+  nodes = generate_nodes(0, 10, 10)
+
+  plt.style.use('ggplot')
+  f, (nodes_plot, shortest_path_plot) = plt.subplots(1, 2, sharey=True, sharex=True)
+
+  draw_nodes(nodes_plot, nodes)
+
+  shortest_path = find_shortest_path(nodes, euclidean)
+
+  draw_shortest_path(shortest_path_plot, nodes, shortest_path)
+
   plt.xticks(np.arange(0, 11, 1.0))
   plt.yticks(np.arange(1, 11, 1.0))
   plt.ylabel('y')
   plt.xlabel('x')
   plt.show()
 
-if __name__ == "__main__":
-  nodes = generate_nodes(0, 10, 10)
-  draw_nodes(nodes)
-  shortest_path = find_shortest_path(nodes, euclidean)
-  draw_shortest_path(nodes, shortest_path)
   print("starting point = ", shortest_path.start)
   print("distance = ", shortest_path.distance)
   print("path = ", shortest_path.tour)
