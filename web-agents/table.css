@@ -1,0 +1,29 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #EEE;
+  color: #212121;
+}
+
+table {
+  margin: 24px;
+  border-collapse: collapse;
+  font-family: "Roboto";
+  text-align: center;
+}
+
+table thead {
+  background-color: #212121;
+  color: #FAFAFA;
+}
+
+table thead th {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+th, td {
+  padding: 4px;
+}
