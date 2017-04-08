@@ -64,14 +64,14 @@ class StackOverflowSpider(scrapy.Spider):
 
       questions.append(question)
 
-      with open(OUTPUT_FILE, "w") as questions_file:
-        questions_file.write(json.dumps(questions, default=lambda o: o.__dict__))
-
       yield {'QUESTION': question}
 
+    with open(OUTPUT_FILE, "w") as questions_file:
+      questions_file.write(json.dumps(questions, default=lambda o: o.__dict__))
     time.sleep(DELAY)
     next_page = response.css('#mainbar > div.pager.fl > a[rel=next] ::attr(href)').extract_first()
     if next_page:
       yield scrapy.Request(response.urljoin(next_page), callback=self.parse)
     else:
       yield {'Your reach last page': next_page}
+
