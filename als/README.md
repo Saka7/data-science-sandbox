@@ -9,7 +9,7 @@ Added two types of creatures **predators**(red) and **herbivorous**(yellow). **P
 
 ![ALS-start](https://github.com/Saka7/data-science-experiments/blob/master/als/images/als-start.png)
 
-![ALS-end](https://github.com/Saka7/data-science-experiments/blob/master/als/images/als-start.png)
+![ALS-end](https://github.com/Saka7/data-science-experiments/blob/master/als/images/als-end.png)
 
 # Biotopia
 
