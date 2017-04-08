@@ -3,14 +3,32 @@
 ```python
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 INPUT_JSON_FILE = 'questions.json'
+plt.style.use("ggplot")
 
 pd.set_option('display.max_colwidth', -1)
 df = pd.read_json(INPUT_JSON_FILE).drop("short_description", 1).drop("tag", 1)
 df = df.sort_values(['answers', 'votes', 'views'], ascending=[True, False, False])
+df.plot.scatter(x="views", y="votes")
+df.plot.scatter(x="views", y="answers")
+df.plot.scatter(x="answers", y="votes")
+plt.show()
 df
 ```
+
+
+![png](web_data_analysis_files/web_data_analysis_0_0.png)
+
+
+
+![png](web_data_analysis_files/web_data_analysis_0_1.png)
+
+
+
+![png](web_data_analysis_files/web_data_analysis_0_2.png)
+
 
 
 
@@ -29,404 +47,404 @@ df
   </thead>
   <tbody>
     <tr>
-      <th>39</th>
+      <th>23</th>
       <td>0</td>
-      <td>scipy.signal.resample: malfunction with even number of points?</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43283845/scipy-signal-resample-malfunction-with-even-number-of-points</td>
-      <td>14</td>
+      <td>Decoding of bytes object results in unexpected + invalid UTF-8 - how can I avoid this?</td>
+      <td>https://stackoverflow.com/questions/43256079/decoding-of-bytes-object-results-in-unexpected-invalid-utf-8-how-can-i-avoid</td>
+      <td>49</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0</td>
+      <td>Pandas analogue of SQL's “NOT IN” operator</td>
+      <td>https://stackoverflow.com/questions/43256402/pandas-analogue-of-sqls-not-in-operator</td>
+      <td>31</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>0</td>
+      <td>Split string by number of whitespaces</td>
+      <td>https://stackoverflow.com/questions/43255850/split-string-by-number-of-whitespaces</td>
+      <td>42</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>0</td>
+      <td>PyPDF2 - manually adding new page to merged PDF offsets original bookmark destinations</td>
+      <td>https://stackoverflow.com/questions/43256025/pypdf2-manually-adding-new-page-to-merged-pdf-offsets-original-bookmark-destin</td>
+      <td>20</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>0</td>
+      <td>Sort a JSON using Python</td>
+      <td>https://stackoverflow.com/questions/43255909/sort-a-json-using-python</td>
+      <td>55</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>49</th>
+      <th>42</th>
       <td>0</td>
-      <td>How do I plot a histogram of months with dates in matplotlib</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43283586/how-do-i-plot-a-histogram-of-months-with-dates-in-matplotlib</td>
-      <td>9</td>
+      <td>Use numpy to translate huge array of 2-byte strings to corresponding 1-byte strings according to a fixed mapping</td>
+      <td>https://stackoverflow.com/questions/43255679/use-numpy-to-translate-huge-array-of-2-byte-strings-to-corresponding-1-byte-stri</td>
+      <td>41</td>
       <td>1</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>0</td>
-      <td>Python array counter</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284525/python-array-counter</td>
-      <td>46</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>0</td>
-      <td>'float' object has no attribute '__getitem__' in for loop</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284633/float-object-has-no-attribute-getitem-in-for-loop</td>
-      <td>33</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>0</td>
-      <td>Incorrectly returning the value of a Node at position 'm' in a linked list</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43283705/incorrectly-returning-the-value-of-a-node-at-position-m-in-a-linked-list</td>
-      <td>26</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0</td>
-      <td>Python- Labeling items in a list by year</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284734/python-labeling-items-in-a-list-by-year</td>
-      <td>23</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>0</td>
-      <td>Python scriptline to get date&amp;time</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284121/python-scriptline-to-get-datetime</td>
-      <td>18</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>36</th>
-      <td>0</td>
-      <td>define 2 GET ABSOLUTE URL method</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43283871/define-2-get-absolute-url-method</td>
-      <td>16</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>0</td>
-      <td>Spectrogram of a wave file</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284049/spectrogram-of-a-wave-file</td>
-      <td>15</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>0</td>
-      <td>Tkinter threading and return to text widget</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284439/tkinter-threading-and-return-to-text-widget</td>
-      <td>13</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>0</td>
-      <td>Python Bokeh - Assign taptool to a subset of Glyphs</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43283717/python-bokeh-assign-taptool-to-a-subset-of-glyphs</td>
-      <td>13</td>
-      <td>0</td>
     </tr>
     <tr>
       <th>19</th>
       <td>0</td>
-      <td>plot_time and annoying “.f” in x-axis</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284370/plot-time-and-annoying-f-in-x-axis</td>
-      <td>12</td>
+      <td>Python pandas dataframe convert values without decimals</td>
+      <td>https://stackoverflow.com/questions/43256211/python-pandas-dataframe-convert-values-without-decimals</td>
+      <td>20</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>0</td>
+      <td>Python Selenium Get PageSource of XHTML</td>
+      <td>https://stackoverflow.com/questions/43255904/python-selenium-get-pagesource-of-xhtml</td>
+      <td>14</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>0</td>
+      <td>Microsoft Exchange Integration in Python</td>
+      <td>https://stackoverflow.com/questions/43256137/microsoft-exchange-integration-in-python</td>
+      <td>13</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>Python store line by line in List from Text File</td>
+      <td>https://stackoverflow.com/questions/43256926/python-store-line-by-line-in-list-from-text-file</td>
+      <td>31</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>27</th>
+      <th>49</th>
       <td>0</td>
-      <td>Django - Redirecting after ajax post call with the data</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284153/django-redirecting-after-ajax-post-call-with-the-data</td>
-      <td>12</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>0</td>
-      <td>Run all the code in a Django ModelForm __init__() method after an invalid form submission</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43283893/run-all-the-code-in-a-django-modelform-init-method-after-an-invalid-form-s</td>
-      <td>12</td>
+      <td>Type() not detecting my class (Tree) in Python 3</td>
+      <td>https://stackoverflow.com/questions/43255495/type-not-detecting-my-class-tree-in-python-3</td>
+      <td>31</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>38</th>
+      <th>1</th>
       <td>0</td>
-      <td>Using python's pysftp, how do you generate a host key?</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43283855/using-pythons-pysftp-how-do-you-generate-a-host-key</td>
-      <td>12</td>
+      <td>Python: Trying to loggin with requests and perform a HTTP request</td>
+      <td>https://stackoverflow.com/questions/43256970/python-trying-to-loggin-with-requests-and-perform-a-http-request</td>
+      <td>30</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>0</td>
+      <td>Google App Engine api throws 503, but error not shown in the admin console</td>
+      <td>https://stackoverflow.com/questions/43255910/google-app-engine-api-throws-503-but-error-not-shown-in-the-admin-console</td>
+      <td>29</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>0</td>
+      <td>How to let compiler interpret as bolean context [on hold]</td>
+      <td>https://stackoverflow.com/questions/43256479/how-to-let-compiler-interpret-as-bolean-context</td>
+      <td>27</td>
       <td>0</td>
     </tr>
     <tr>
       <th>20</th>
       <td>0</td>
-      <td>How can I avoid tox from reinstalling dependencies and deleting my break point?</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284343/how-can-i-avoid-tox-from-reinstalling-dependencies-and-deleting-my-break-point</td>
-      <td>11</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>0</td>
-      <td>Get function name as script parameter [duplicate]</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284300/get-function-name-as-script-parameter</td>
-      <td>10</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>Require help understanding Flask url_for()</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284770/require-help-understanding-flask-url-for</td>
-      <td>9</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>0</td>
-      <td>Python, evdev, usb barcode reader: how to decode the input data</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284404/python-evdev-usb-barcode-reader-how-to-decode-the-input-data</td>
-      <td>9</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>0</td>
-      <td>Carmen-Python: the JSON object must be str, not 'bytes'</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284298/carmen-python-the-json-object-must-be-str-not-bytes</td>
-      <td>9</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>0</td>
-      <td>PyCharm - Expected type 'Optional[IO[str]]', got 'TextIOWrapper[str]' instead</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284253/pycharm-expected-type-optionaliostr-got-textiowrapperstr-instead</td>
-      <td>9</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>44</th>
-      <td>0</td>
-      <td>Stabilizing an Already Seeded Tensorflow Network and Predicting Confidence</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43283663/stabilizing-an-already-seeded-tensorflow-network-and-predicting-confidence</td>
-      <td>8</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>40</th>
-      <td>0</td>
-      <td>Trouble importing from rpy2.robjects</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43283802/trouble-importing-from-rpy2-robjects</td>
-      <td>7</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>0</td>
-      <td>Reshape batch of tensors into batch of vectors in TensorFlow</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284684/reshape-batch-of-tensors-into-batch-of-vectors-in-tensorflow</td>
-      <td>6</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>0</td>
-      <td>Error loading MySQLdb module:_mysql.so: undefined symbol: mysql_shutdown</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284615/error-loading-mysqldb-module-mysql-so-undefined-symbol-mysql-shutdown</td>
-      <td>6</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>0</td>
-      <td>cartToPolar in openCV gives only degrees between 0 and 90</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284603/carttopolar-in-opencv-gives-only-degrees-between-0-and-90</td>
-      <td>5</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>0</td>
-      <td>How to use a Python weakref cache mapping keys to values, when values hold a reference to the keys?</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284711/how-to-use-a-python-weakref-cache-mapping-keys-to-values-when-values-hold-a-ref</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>47</th>
-      <td>0</td>
-      <td>add python as a CGI on a apache/php5-fpm enabled debian server</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43283627/add-python-as-a-cgi-on-a-apache-php5-fpm-enabled-debian-server</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>0</td>
-      <td>Why this script won't work if the while is set to true?</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284486/why-this-script-wont-work-if-the-while-is-set-to-true</td>
-      <td>28</td>
-      <td>-1</td>
-    </tr>
-    <tr>
-      <th>45</th>
-      <td>0</td>
-      <td>How to create an object from a class— getting an Attribute error</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43283657/how-to-create-an-object-from-a-class-getting-an-attribute-error</td>
-      <td>22</td>
-      <td>-1</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>0</td>
-      <td>sklearn - knn sklearn.neighbors kneighbors function producing unexpected result for text analysis?</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284115/sklearn-knn-sklearn-neighbors-kneighbors-function-producing-unexpected-result</td>
-      <td>16</td>
-      <td>-1</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>0</td>
-      <td>Check if geo coordinate point is land or ocean</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284606/check-if-geo-coordinate-point-is-land-or-ocean</td>
-      <td>12</td>
-      <td>-1</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>Summing multiple dictionary values from a generator expression</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284804/summing-multiple-dictionary-values-from-a-generator-expression</td>
-      <td>19</td>
-      <td>-2</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>0</td>
-      <td>Why does python put a namespace here? [on hold]</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284383/why-does-python-put-a-namespace-here</td>
-      <td>17</td>
-      <td>-2</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>0</td>
-      <td>How to debug “TypeError: 'NoneType' object has no attribute '__getitem__'”?</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284280/how-to-debug-typeerror-nonetype-object-has-no-attribute-getitem</td>
-      <td>25</td>
-      <td>-3</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>0</td>
-      <td>Python Sync Task [on hold]</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284529/python-sync-task</td>
-      <td>24</td>
-      <td>-7</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>1</td>
-      <td>Beautiful Soup: Data Values Not Matching Headings</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284399/beautiful-soup-data-values-not-matching-headings</td>
-      <td>16</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>1</td>
-      <td>Interpolating climate data with irregular measurement intervals in Python with pandas and traces</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284165/interpolating-climate-data-with-irregular-measurement-intervals-in-python-with-p</td>
-      <td>28</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>1</td>
-      <td>Dynamically adding elements to a NumPy array of unknown final length</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43283866/dynamically-adding-elements-to-a-numpy-array-of-unknown-final-length</td>
+      <td>Python Rotation Matirx Error</td>
+      <td>https://stackoverflow.com/questions/43256193/python-rotation-matirx-error</td>
       <td>26</td>
       <td>0</td>
     </tr>
     <tr>
       <th>28</th>
-      <td>1</td>
-      <td>Issues installing pynini</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284123/issues-installing-pynini</td>
+      <td>0</td>
+      <td>Identifying sublists entirely contained within other lists</td>
+      <td>https://stackoverflow.com/questions/43255995/identifying-sublists-entirely-contained-within-other-lists</td>
+      <td>22</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0</td>
+      <td>SQLITE Python cannot change value</td>
+      <td>https://stackoverflow.com/questions/43256747/sqlite-python-cannot-change-value</td>
+      <td>20</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>0</td>
+      <td>Multiple Processing with a loop</td>
+      <td>https://stackoverflow.com/questions/43255525/multiple-processing-with-a-loop</td>
+      <td>20</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0</td>
+      <td>Splitting to make Workbooks</td>
+      <td>https://stackoverflow.com/questions/43256475/splitting-to-make-workbooks</td>
+      <td>18</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0</td>
+      <td>Can I get IP address and port of disconnected client in Tornado</td>
+      <td>https://stackoverflow.com/questions/43256641/can-i-get-ip-address-and-port-of-disconnected-client-in-tornado</td>
+      <td>16</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0</td>
+      <td>repomd.xml missing for epel-release repo</td>
+      <td>https://stackoverflow.com/questions/43256563/repomd-xml-missing-for-epel-release-repo</td>
+      <td>16</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>How to remove specific item and lines from xml?</td>
+      <td>https://stackoverflow.com/questions/43256911/how-to-remove-specific-item-and-lines-from-xml</td>
       <td>15</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>18</th>
-      <td>1</td>
-      <td>Spark structured streaming with python</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284380/spark-structured-streaming-with-python</td>
+      <th>17</th>
+      <td>0</td>
+      <td>insert into table from another table with alembic</td>
+      <td>https://stackoverflow.com/questions/43256390/insert-into-table-from-another-table-with-alembic</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>0</td>
+      <td>Certificate verification failed with Python 2.7.13 and OpenSSL 1.1.0e on Ubuntu 16.04</td>
+      <td>https://stackoverflow.com/questions/43255589/certificate-verification-failed-with-python-2-7-13-and-openssl-1-1-0e-on-ubuntu</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>0</td>
+      <td>In python, can I write a function within one file that uses the filename of another file which imports it? [duplicate]</td>
+      <td>https://stackoverflow.com/questions/43255967/in-python-can-i-write-a-function-within-one-file-that-uses-the-filename-of-anot</td>
       <td>14</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>0</td>
+      <td>Installing libLAS on docker python - No such file or directory</td>
+      <td>https://stackoverflow.com/questions/43255751/installing-liblas-on-docker-python-no-such-file-or-directory</td>
+      <td>12</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0</td>
+      <td>Pyqt5 : Error converting .ui file to .py file [on hold]</td>
+      <td>https://stackoverflow.com/questions/43256380/pyqt5-error-converting-ui-file-to-py-file</td>
+      <td>7</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>0</td>
+      <td>Keithley 2410 and PyVISA - VI_ERROR_TMO: Timeout expired before operation completed</td>
+      <td>https://stackoverflow.com/questions/43256071/keithley-2410-and-pyvisa-vi-error-tmo-timeout-expired-before-operation-comple</td>
+      <td>7</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>0</td>
+      <td>windows 10 virtualenv access denied</td>
+      <td>https://stackoverflow.com/questions/43255735/windows-10-virtualenv-access-denied</td>
+      <td>7</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>Match specific arrayvalue python</td>
+      <td>https://stackoverflow.com/questions/43257047/match-specific-arrayvalue-python</td>
+      <td>24</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>0</td>
+      <td>Multilevel inheritance in python for user inputs</td>
+      <td>https://stackoverflow.com/questions/43255536/multilevel-inheritance-in-python-for-user-inputs</td>
+      <td>16</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0</td>
+      <td>%d format: a number is required, not NoneType</td>
+      <td>https://stackoverflow.com/questions/43256779/d-format-a-number-is-required-not-nonetype</td>
+      <td>33</td>
+      <td>-2</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0</td>
+      <td>JQuery in Python (py File)</td>
+      <td>https://stackoverflow.com/questions/43256456/jquery-in-python-py-file</td>
+      <td>9</td>
+      <td>-3</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>0</td>
+      <td>python: reverse them for very two elements in list [duplicate]</td>
+      <td>https://stackoverflow.com/questions/43256015/python-reverse-them-for-very-two-elements-in-list</td>
+      <td>23</td>
+      <td>-5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>analysing data using R, AWS lambda and python</td>
+      <td>https://stackoverflow.com/questions/43256863/analysing-data-using-r-aws-lambda-and-python</td>
+      <td>30</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>1</td>
+      <td>Construct YAML that contains JSON data in python</td>
+      <td>https://stackoverflow.com/questions/43256007/construct-yaml-that-contains-json-data-in-python</td>
+      <td>25</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>1</td>
+      <td>Tkinter - Returning from a class and calling a new one</td>
+      <td>https://stackoverflow.com/questions/43255710/tkinter-returning-from-a-class-and-calling-a-new-one</td>
+      <td>24</td>
       <td>0</td>
     </tr>
     <tr>
       <th>34</th>
       <td>1</td>
-      <td>What does this mean: “unable to send message, socket is not open”?</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43283951/what-does-this-mean-unable-to-send-message-socket-is-not-open</td>
-      <td>13</td>
+      <td>How to give name to each node in celery</td>
+      <td>https://stackoverflow.com/questions/43255831/how-to-give-name-to-each-node-in-celery</td>
+      <td>11</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>46</th>
+      <th>36</th>
       <td>1</td>
-      <td>Change range withouth scaling in matplot</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43283643/change-range-withouth-scaling-in-matplot</td>
-      <td>13</td>
+      <td>Items movement daily collection database design system issue</td>
+      <td>https://stackoverflow.com/questions/43255792/items-movement-daily-collection-database-design-system-issue</td>
+      <td>10</td>
       <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>Spyder changes working directory (wdir) when running a script</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284787/spyder-changes-working-directory-wdir-when-running-a-script</td>
-      <td>4</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>48</th>
-      <td>1</td>
-      <td>Python ViolinPlots</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43283599/python-violinplots</td>
-      <td>17</td>
-      <td>-1</td>
     </tr>
     <tr>
       <th>21</th>
-      <td>2</td>
-      <td>How to compute volatility (standard deviation) in rolling window in Pandas</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284304/how-to-compute-volatility-standard-deviation-in-rolling-window-in-pandas</td>
-      <td>39</td>
       <td>1</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>2</td>
-      <td>Python loop - help me understand</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43283960/python-loop-help-me-understand</td>
-      <td>26</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>42</th>
-      <td>2</td>
-      <td>run python script from cmd with inputs</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43283714/run-python-script-from-cmd-with-inputs</td>
-      <td>23</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2</td>
-      <td>Which sparse Matrix representation to use with sklearn.svm.LinearSVC</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284717/which-sparse-matrix-representation-to-use-with-sklearn-svm-linearsvc</td>
+      <td>cx_Oracle.DatabaseError: ORA-01858: date time false format</td>
+      <td>https://stackoverflow.com/questions/43256153/cx-oracle-databaseerror-ora-01858-date-time-false-format</td>
       <td>6</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>31</th>
-      <td>5</td>
-      <td>How to take all the words in a list element as a variable</td>
-      <td>https://stackoverflow.com/questions/tagged/python/questions/43284071/how-to-take-all-the-words-in-a-list-element-as-a-variable</td>
-      <td>47</td>
+      <th>7</th>
+      <td>1</td>
+      <td>Extracting data within multiple links using SCRAPY</td>
+      <td>https://stackoverflow.com/questions/43256758/extracting-data-within-multiple-links-using-scrapy</td>
+      <td>30</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2</td>
+      <td>Why sorted list_b has no value? [duplicate]</td>
+      <td>https://stackoverflow.com/questions/43256396/why-sorted-list-b-has-no-value</td>
+      <td>35</td>
       <td>0</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>2</td>
+      <td>Python - mutable default arguments to functions</td>
+      <td>https://stackoverflow.com/questions/43255782/python-mutable-default-arguments-to-functions</td>
+      <td>14</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>2</td>
+      <td>raspberry pi sending data to a XAMPP database</td>
+      <td>https://stackoverflow.com/questions/43255524/raspberry-pi-sending-data-to-a-xampp-database</td>
+      <td>13</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>2</td>
+      <td>Python with MySQL connector, no information being sent to database</td>
+      <td>https://stackoverflow.com/questions/43255643/python-with-mysql-connector-no-information-being-sent-to-database</td>
+      <td>9</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>2</td>
+      <td>Comparing the order of specific elements in a python list</td>
+      <td>https://stackoverflow.com/questions/43255697/comparing-the-order-of-specific-elements-in-a-python-list</td>
+      <td>83</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>2</td>
+      <td>How can I add the first line in a text file to following lines until a condition is met then repeat?</td>
+      <td>https://stackoverflow.com/questions/43255808/how-can-i-add-the-first-line-in-a-text-file-to-following-lines-until-a-condition</td>
+      <td>26</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2</td>
+      <td>Getting an array from collections ordereddict for the maximum key, values</td>
+      <td>https://stackoverflow.com/questions/43256822/getting-an-array-from-collections-ordereddict-for-the-maximum-key-values</td>
+      <td>22</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>4</td>
+      <td>Why does np.array([4, 3, 0]) + np.array([0, 2, 2]) give an output of array([4,5,2])</td>
+      <td>https://stackoverflow.com/questions/43255628/why-does-np-array4-3-0-np-array0-2-2-give-an-output-of-array4-5</td>
+      <td>44</td>
+      <td>-5</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>5</td>
+      <td>Compare two lists of tuples</td>
+      <td>https://stackoverflow.com/questions/43256677/compare-two-lists-of-tuples</td>
+      <td>56</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
